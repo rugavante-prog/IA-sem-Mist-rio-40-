@@ -1,1 +1,478 @@
-index.html
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IA Sem Mistério 40+ | 50 Mapas Visuais</title>
+<meta name="description" content="50 mapas visuais para aprender a usar Inteligência Artificial no celular, trabalho e WhatsApp.">
+<style>
+:root{--azul:#102e45;--dourado:#edba55;--creme:#fbf7ef;--texto:#263a49}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;color:var(--texto);line-height:1.55}
+h1,h2,h3{line-height:1.2}
+h1{font-size:clamp(30px,5vw,49px)}
+h2{font-size:clamp(26px,4vw,36px)}
+p{line-height:1.65}
+section{padding:65px 20px}
+.container{max-width:1120px;margin:auto}
+.center{text-align:center}
+.creme{background:var(--creme)}
+.escuro{background:var(--azul);color:white}
+.urgencia{background:var(--dourado);text-align:center;padding:12px;font-weight:bold}
+.hero{background:linear-gradient(135deg,#fffaf0,#e5f0f5)}
+.hero-grid,.duas{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.selo{display:inline-block;padding:9px 18px;background:#e5edf0;border-radius:30px;font-weight:bold}
+.subtitulo{font-size:18px;color:#526775}
+.escuro .subtitulo{color:#d5e1e9}
+.botao{display:inline-block;background:#228449;color:white;padding:17px 25px;text-align:center;text-decoration:none;font-size:17px;font-weight:bold;border-radius:12px;box-shadow:0 5px 0 #146035;cursor:pointer}
+.botao:hover{filter:brightness(1.08)}
+.nota{font-size:13px;color:#697c88}
+.lista{list-style:none;padding:0}
+.lista li{padding:7px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{padding:24px;background:white;border:1px solid #e4e9ed;border-radius:18px;box-shadow:0 6px 22px #1230470c}
+.card h3{color:var(--azul)}
+.card ul{padding-left:20px}
+.card li{margin-bottom:8px}
+.escuro .card{background:#1c4059;border-color:#345a70;color:white}
+.escuro .card h3{color:white}
+.carrossel{display:flex;gap:18px;overflow-x:auto;padding:15px 2px 25px;scroll-snap-type:x mandatory}
+.carrossel .card{min-width:285px;width:285px;scroll-snap-align:start}
+.mockup{min-height:410px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#dcebf1,#fff);border-radius:25px;padding:35px}
+.livro{width:280px;min-height:350px;background:linear-gradient(145deg,#204a64,#0b2539);border-left:16px solid var(--dourado);border-radius:7px 16px 16px 7px;color:white;text-align:center;padding:38px 20px;box-shadow:18px 20px 25px #0003;transform:rotate(-5deg)}
+.livro strong{display:block;font-size:39px;line-height:1.1;margin:40px 0}
+.livro small{color:var(--dourado);font-weight:bold}
+.livro .quantidade{font-size:29px;color:var(--dourado);font-weight:bold}
+.conteudos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contador{display:flex;justify-content:center;gap:12px;margin:30px 0}
+.tempo{background:white;color:var(--azul);padding:14px;border-radius:12px;min-width:85px;font-size:29px;font-weight:bold}
+.tempo small{display:block;font-size:11px}
+.numeros{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.numeros b{display:block;font-size:32px;color:#bd8b35}
+.bonus{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gratis{color:#188348;font-weight:bold;font-size:19px}
+.planos{display:grid;grid-template-columns:1.1fr .9fr;gap:25px;align-items:start;max-width:950px;margin:35px auto}
+.plano{background:white;border:2px solid #dce5e8;border-radius:23px;padding:28px}
+.destaque{border:3px solid #dab052;box-shadow:0 15px 40px #12304720}
+.mais-vendido{background:var(--dourado);padding:9px 17px;border-radius:20px;display:inline-block;font-weight:bold}
+.preco{font-size:48px;font-weight:bold;color:var(--azul)}
+.plano .lista li{border-bottom:1px solid #edf0f2}
+.plano .botao{display:block}
+.kit-imagem{background:#e9f0f2;padding:25px;display:flex;gap:10px;align-items:center;justify-content:center;border-radius:14px;margin:20px 0;min-height:150px}
+.mini-livro{background:var(--azul);color:white;padding:22px 13px;border-radius:8px;font-weight:bold;text-align:center;max-width:175px}
+.mini-bonus{background:#e4b34e;color:var(--azul);padding:18px;border-radius:9px;font-weight:bold;text-align:center}
+.faq{max-width:850px;margin:auto}
+.faq details{padding:18px 0;border-bottom:1px solid #dce4e9}
+.faq summary{cursor:pointer;font-weight:bold;font-size:17px}
+.faq details p{color:#596c78}
+.comparacao{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tela{border:8px solid #dce7ec;border-radius:15px;padding:22px;background:white;min-height:210px}
+.exemplo{background:#e7f2ee;padding:15px;border-radius:10px;margin-top:20px}
+footer{background:#0b263a;color:#cddbe3;padding:35px 20px;text-align:center;font-size:13px}
+footer p{max-width:900px;margin:12px auto}
+@media(max-width:800px){
+.hero-grid,.duas,.planos,.conteudos{grid-template-columns:1fr}
+.grid,.bonus{grid-template-columns:repeat(2,1fr)}
+.numeros{grid-template-columns:repeat(2,1fr)}
+section{padding:48px 18px}
+.botao{width:100%}
+}
+@media(max-width:520px){
+.grid,.bonus,.comparacao{grid-template-columns:1fr}
+.carrossel .card{min-width:85vw}
+.livro{width:240px}
+.tempo{min-width:72px}
+}
+</style>
+</head>
+<body>
+
+<div class="urgencia">
+⏳ Oferta por tempo limitado — Válida até hoje,
+<span class="data"></span> às 23:59
+</div>
+
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<span class="selo">IA Sem Mistério 40+</span>
+<h1>50 Mapas Visuais para você usar a Inteligência Artificial no seu dia a dia, no trabalho e no celular — e nunca mais ficar para trás enquanto todo mundo já está usando.</h1>
+<p class="subtitulo">Do primeiro clique ao comando certo: veja de forma simples e visual onde clicar, o que escrever e o resultado que aparece no ChatGPT, no Gemini e na Meta AI do WhatsApp — mesmo que hoje você nunca tenha aberto o ChatGPT.</p>
+<ul class="lista">
+<li>✅ Olhe o mapa, copie o comando e comece — sem curso ou termo técnico.</li>
+<li>✅ Funciona no celular e no computador.</li>
+<li>✅ Use quando quiser, como um manual de consulta.</li>
+</ul>
+<a class="botao completo" href="#planos">QUERO USAR A IA AGORA</a>
+<p class="nota">Acesso por e-mail e WhatsApp após confirmação da compra.</p>
+</div>
+<div class="mockup">
+<div class="livro">
+<small>MAPAS VISUAIS • FEITOS PARA 40+</small>
+<strong>IA SEM<br>MISTÉRIO<br>40+</strong>
+<div class="quantidade">50 MAPAS VISUAIS</div>
+<p>DO PRIMEIRO CLIQUE AO COMANDO CERTO</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="center">Um mapa visual para cada coisa que a IA faz por você</h2>
+<p class="center subtitulo">Veja alguns exemplos abaixo. Deslize para o lado.</p>
+<div class="carrossel" id="carrossel"></div>
+<h2 class="center">O que cada mapa possui</h2>
+<div class="grid">
+<div class="card"><h3>✅ A tela de verdade</h3><p>Você vê exatamente onde clicar.</p></div>
+<div class="card"><h3>✅ O comando pronto</h3><p>É só copiar e colar.</p></div>
+<div class="card"><h3>✅ O resultado</h3><p>Entenda o que esperar antes de fazer.</p></div>
+<div class="card"><h3>✅ Consulte sempre</h3><p>Use quantas vezes quiser.</p></div>
+</div>
+<p class="center" style="margin-top:35px">
+<a class="botao completo" href="#planos">QUERO OS 50 MAPAS</a>
+</p>
+</div>
+</section>
+
+<section class="escuro">
+<div class="container center">
+<p>BENEFÍCIOS</p>
+<h2>Por que ter o seu IA Sem Mistério 40+</h2>
+<div class="grid" style="text-align:left">
+<div class="card">🤍 Pare de se sentir por fora quando todo mundo fala de Inteligência Artificial.</div>
+<div class="card">🤍 Ganhe tempo nas tarefas que hoje levam muito tempo.</div>
+<div class="card">🤍 Desenvolva habilidades úteis para acompanhar as mudanças no trabalho.</div>
+<div class="card">🤍 Use a IA no celular e no WhatsApp que você já usa todo dia.</div>
+<div class="card">🤍 Aprenda sem precisar perguntar para ninguém nem passar vergonha.</div>
+</div>
+<p style="margin-top:30px"><a class="botao completo" href="#planos">QUERO OS 50 MAPAS</a></p>
+</div>
+</section>
+
+<section class="creme">
+<div class="container">
+<p class="center">CONTEÚDO DO KIT</p>
+<h2 class="center">Tudo que você vai aprender no IA SEM MISTÉRIO 40+</h2>
+<p class="center subtitulo">Mapas visuais organizados por etapa, do jeito mais simples de entender.</p>
+<div class="conteudos" id="conteudos"></div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="center">Arraste e compare</h2>
+<p class="center subtitulo">Da tela vazia ao comando pronto.</p>
+<div class="comparacao">
+<div class="tela">
+<strong>ANTES — Sem saber o que escrever</strong>
+<div class="exemplo">🤔 O que posso perguntar para a Inteligência Artificial?</div>
+</div>
+<div class="tela">
+<strong>DEPOIS — Comando pronto</strong>
+<div class="exemplo">"Crie uma lista de compras para 5 dias, para duas pessoas, com alimentos simples e econômicos."</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="escuro center">
+<div class="container">
+<h2>Até quando você vai fingir que entende quando falam de Inteligência Artificial?</h2>
+<div class="contador">
+<div class="tempo"><span id="horas">00</span><small>HORAS</small></div>
+<div class="tempo"><span id="minutos">00</span><small>MINUTOS</small></div>
+<div class="tempo"><span id="segundos">00</span><small>SEGUNDOS</small></div>
+</div>
+<p>O preço promocional com os 4 bônus inclusos é anunciado por tempo limitado. Aproveite as condições disponíveis.</p>
+<a class="botao completo" href="#planos">NÃO QUERO FICAR PARA TRÁS</a>
+</div>
+</section>
+
+<section>
+<div class="container">
+<p class="center">FEITO PARA VOCÊ</p>
+<h2 class="center">Ideal para você que...</h2>
+<div class="numeros">
+<div class="card"><b>01</b>Nunca abriu o ChatGPT, ou abriu e não soube o que fazer.</div>
+<div class="card"><b>02</b>Sente que está ficando para trás no trabalho.</div>
+<div class="card"><b>03</b>Tem vergonha de perguntar para os mais novos.</div>
+<div class="card"><b>04</b>Quer usar a IA no celular, sem complicação.</div>
+<div class="card"><b>05</b>Quer ganhar tempo no dia a dia e na profissão.</div>
+</div>
+</div>
+</section>
+
+<section class="creme">
+<div class="container duas">
+<div class="mockup">
+<div class="livro">
+<small>FEITOS PARA 40+</small>
+<strong>IA SEM<br>MISTÉRIO<br>40+</strong>
+<div class="quantidade">50 MAPAS</div>
+</div>
+</div>
+<div>
+<h2>Tudo que você vai receber</h2>
+<ul class="lista">
+<li>✅ 50 mapas visuais divididos em 5 etapas.</li>
+<li>✅ Primeiros Passos, IA no Dia a Dia e IA no Trabalho.</li>
+<li>✅ IA no Celular e WhatsApp e Criar com IA.</li>
+<li>✅ Material para aprender e consultar sempre.</li>
+<li>✅ Acesso vitalício, no seu tempo.</li>
+<li>✅ Linguagem simples, sem jargão técnico.</li>
+</ul>
+<h3>🎁 + 4 Bônus exclusivos no Kit Completo</h3>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="center">4 Bônus Exclusivos</h2>
+<div class="bonus">
+<div class="card">
+<h3>🎁 200 Comandos Prontos para Copiar e Colar</h3>
+<p><s>R$47</s> <span class="gratis">GRÁTIS</span></p>
+<p>Os comandos certos para cada situação: copiar, colar e usar.</p>
+</div>
+<div class="card">
+<h3>🎁 Golpes com IA 40+</h3>
+<p><s>R$37</s> <span class="gratis">GRÁTIS</span></p>
+<p>Voz clonada, vídeo falso e falso parente: como reconhecer e se proteger.</p>
+</div>
+<div class="card">
+<h3>🎁 IA para Ganhar Renda Extra 40+</h3>
+<p><s>R$37</s> <span class="gratis">GRÁTIS</span></p>
+<p>Ideias para oferecer serviços e vender mais com IA, sem garantia de ganhos.</p>
+</div>
+<div class="card">
+<h3>🎁 Guia dos Apps de IA Gratuitos</h3>
+<p><s>R$27</s> <span class="gratis">GRÁTIS</span></p>
+<p>Aplicativos com versões grátis e para que serve cada um.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="creme" id="planos">
+<div class="container center">
+<h2>Escolha seu plano</h2>
+<div class="planos">
+
+<div class="plano destaque">
+<span class="mais-vendido">⭐ MAIS VENDIDO</span>
+<h2>Kit Completo</h2>
+<div class="kit-imagem">
+<div class="mini-livro">IA SEM MISTÉRIO 40+<br>50 MAPAS</div>
+<div class="mini-bonus">🎁 4 BÔNUS EXCLUSIVOS</div>
+</div>
+<p><s>de R$77,90</s> por</p>
+<div class="preco">R$37,00</div>
+<p>à vista · sem mensalidade</p>
+<ul class="lista">
+<li>✅ Pack com 50 mapas visuais completos</li>
+<li>✅ Primeiros Passos completo</li>
+<li>✅ IA no Dia a Dia completo</li>
+<li>✅ IA no Trabalho completo</li>
+<li>✅ IA no Celular e WhatsApp completo</li>
+<li>✅ Criar com IA completo</li>
+<li>🎁 200 Comandos Prontos — R$47</li>
+<li>🎁 Golpes com IA 40+ — R$37</li>
+<li>🎁 IA para Ganhar Renda Extra — R$37</li>
+<li>🎁 Guia dos Apps Gratuitos — R$27</li>
+<li>✅ Acesso vitalício</li>
+</ul>
+<p><strong>R$148 em bônus inclusos sem custo adicional.</strong></p>
+<a class="botao completo" href="#planos">QUERO O KIT COMPLETO AGORA</a>
+<p class="nota">Acesso por WhatsApp ou e-mail após confirmação.</p>
+</div>
+
+<div class="plano">
+<h2>Kit Básico</h2>
+<div class="kit-imagem">
+<div class="mini-livro">IA SEM MISTÉRIO 40+<br>50 MAPAS</div>
+</div>
+<div class="preco">R$19,90</div>
+<p>à vista · sem mensalidade</p>
+<ul class="lista">
+<li>✅ Pack com 50 mapas visuais</li>
+<li>✅ Acesso vitalício</li>
+<li>⬜ Sem os 4 bônus exclusivos</li>
+</ul>
+<a class="botao basico" href="#planos">QUERO O KIT BÁSICO</a>
+<p class="nota">Acesso por WhatsApp ou e-mail após confirmação.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container center">
+<h2>O que dizem sobre aprender IA depois dos 40</h2>
+<p class="subtitulo">Exemplos ilustrativos. Substitua por depoimentos reais e autorizados de compradores.</p>
+<div class="grid">
+<div class="card">
+<p>"Eu achava que IA era coisa de jovem. Hoje consigo preparar orçamentos da oficina usando comandos prontos."</p>
+<strong>Exemplo ilustrativo — Mecânico</strong>
+</div>
+<div class="card">
+<p>"Usei a Meta AI do WhatsApp para entender melhor uma bula antes de tirar minhas dúvidas com o farmacêutico."</p>
+<strong>Exemplo ilustrativo — Aposentada</strong>
+</div>
+<div class="card">
+<p>"Atualizei meu currículo com a IA seguindo as orientações dos mapas."</p>
+<strong>Exemplo ilustrativo — Auxiliar administrativa</strong>
+</div>
+</div>
+</div>
+</section>
+
+<section class="escuro center">
+<div class="container">
+<h2>🛡️ Garantia Vitalícia</h2>
+<p>Sem prazo, sem burocracia, conforme as condições da garantia oferecida pelo vendedor.</p>
+</div>
+</section>
+
+<section>
+<div class="container center">
+<h2>Como funciona depois da compra</h2>
+<div class="grid">
+<div class="card"><h2>01</h2>Você finaliza a compra em ambiente seguro.</div>
+<div class="card"><h2>02</h2>Recebe o acesso por e-mail e WhatsApp após a confirmação.</div>
+<div class="card"><h2>03</h2>Abre o primeiro mapa e faz seu primeiro comando no celular ou computador.</div>
+</div>
+</div>
+</section>
+
+<section class="creme">
+<div class="container faq">
+<p class="center">PERGUNTAS FREQUENTES</p>
+<h2 class="center">Ficou com alguma dúvida?</h2>
+<div id="perguntas"></div>
+</div>
+</section>
+
+<section class="escuro center">
+<div class="container">
+<p>Oferta válida até hoje, <span class="data"></span> às 23:59</p>
+<h2>Seu primeiro comando com IA pode começar hoje!</h2>
+<a class="botao completo" href="#planos">QUERO USAR A IA ANTES QUE O PREÇO SUBA</a>
+</div>
+</section>
+
+<footer>
+<p>© 2026 IA Sem Mistério 40+ — Todos os direitos reservados.</p>
+<p>ChatGPT, Gemini e Meta AI são marcas de seus respectivos titulares. Este material é independente e não possui vínculo oficial com essas empresas.</p>
+<p>Conteúdo educativo. Ferramentas de IA podem cometer erros. Informações médicas devem ser confirmadas com profissionais de saúde. Recursos gratuitos podem mudar.</p>
+</footer>
+
+<script>
+// INSIRA AQUI OS LINKS REAIS DOS CHECKOUTS:
+const CHECKOUT_COMPLETO = "";
+const CHECKOUT_BASICO = "";
+
+const categorias = [
+["🚀","Primeiros Passos","Do zero ao primeiro uso",["Como Criar Sua Conta Grátis","Falando com a IA por Voz","Como Perguntar do Jeito Certo","ChatGPT, Gemini ou Meta AI?","Seus Primeiros 5 Comandos"]],
+["🏠","IA no Dia a Dia","Resolve a rotina em segundos",["Receita com o que Tem na Geladeira","Lista de Compras da Semana","Planejar uma Viagem","Mensagem de Aniversário","Ideia de Presente"]],
+["💼","IA no Trabalho","Faça em minutos o que levava a tarde",["E-mail Profissional em 1 Minuto","Currículo Atualizado","Orçamento para Cliente","Resumir um Documento Longo","Relatório Pronto"]],
+["📱","IA no Celular e WhatsApp","A IA que já está no seu bolso",["Meta AI no WhatsApp","Foto que Vira Texto","Tradução por Voz","Entender Bula de Remédio","Entender o Resultado de um Exame"]],
+["🎨","Criar com IA","Imagens, cartões e fotos de família",["Restaurar Foto Antiga","Criar uma Imagem do Zero","Cartão de Aniversário","Figurinha para o WhatsApp","Áudio com a Sua Mensagem"]]
+];
+
+const conteudos = [
+["🚀 Primeiros Passos",["O que É Inteligência Artificial, sem Complicação","Como Criar Sua Conta Grátis","Falando com a IA por Voz","Como Perguntar do Jeito Certo","ChatGPT, Gemini ou Meta AI: Qual Usar?","Como Corrigir uma Resposta Errada","Seus Primeiros 5 Comandos","E muito mais"]],
+["🏠 IA no Dia a Dia",["Receita com o que Tem na Geladeira","Lista de Compras da Semana","Cardápio da Semana","Planejar uma Viagem","Mensagem de Aniversário","Ideia de Presente","Organizar a Rotina da Casa","E muito mais"]],
+["💼 IA no Trabalho",["E-mail Profissional em 1 Minuto","Currículo Atualizado","Orçamento para Cliente","Planilha sem Saber Fórmula","Resumir um Documento Longo","Relatório Pronto","Responder Cliente com Educação","E muito mais"]],
+["📱 IA no Celular e WhatsApp",["Meta AI no WhatsApp","Gemini no Celular","Foto que Vira Texto","Tradução por Voz","Entender Bula de Remédio","Entender o Resultado de um Exame","Ditar em Vez de Digitar","E muito mais"]],
+["🎨 Criar com IA",["Restaurar Foto Antiga","Criar uma Imagem do Zero","Cartão de Aniversário","Convite de Festa","Figurinha para o WhatsApp","Áudio com a Sua Mensagem","Post para Redes Sociais","E muito mais"]]
+];
+
+const faq = [
+["Nunca usei nenhuma IA. Serve para mim?","Sim. Os mapas começam do zero: criar a conta, abrir e fazer a primeira pergunta."],
+["É um curso em vídeo?","Não. São 50 mapas visuais para olhar, copiar o comando e fazer."],
+["Preciso pagar pelas IAs?","Os exemplos priorizam recursos gratuitos. Algumas ferramentas podem ter limites de uso."],
+["Funciona no celular?","Sim. A maioria dos mapas foi pensada para celular, inclusive WhatsApp."],
+["Preciso saber inglês?","Não. O material está em português e você pode conversar com a IA em português."],
+["Como eu recebo o material?","O acesso é enviado por e-mail e WhatsApp após a confirmação da compra."],
+["Tem prazo de validade para acessar?","O acesso ao material é vitalício."],
+["Os bônus são realmente grátis?","Os quatro bônus estão incluídos sem custo adicional no Kit Completo durante a oferta."],
+["Como funciona a garantia?","A oferta anuncia Garantia Vitalícia. Consulte as condições específicas fornecidas pelo vendedor."]
+];
+
+function lista(arr) {
+return "<ul>"+arr.map(x=>"<li>"+x+"</li>").join("")+"</ul>";
+}
+
+document.getElementById("carrossel").innerHTML =
+categorias.map(x=>`
+<div class="card">
+<h3>${x[0]} ${x[1]}</h3>
+<p>${x[2]}</p>
+${lista(x[3])}
+</div>`).join("");
+
+document.getElementById("conteudos").innerHTML =
+conteudos.map(x=>`
+<div class="card">
+<h3>${x[0]}</h3>
+${lista(x[1])}
+</div>`).join("");
+
+document.getElementById("perguntas").innerHTML =
+faq.map(x=>`
+<details>
+<summary>${x[0]}</summary>
+<p>${x[1]}</p>
+</details>`).join("");
+
+document.querySelectorAll(".data").forEach(el=>{
+el.textContent=new Intl.DateTimeFormat("pt-BR",{
+day:"2-digit",month:"2-digit",year:"numeric",
+timeZone:"America/Sao_Paulo"
+}).format(new Date());
+});
+
+function atualizarContador(){
+const partes=new Intl.DateTimeFormat("en-GB",{
+timeZone:"America/Sao_Paulo",
+hour:"2-digit",minute:"2-digit",second:"2-digit",
+hour12:false
+}).formatToParts(new Date());
+
+const hora=Number(partes.find(p=>p.type==="hour").value)%24;
+const min=Number(partes.find(p=>p.type==="minute").value);
+const seg=Number(partes.find(p=>p.type==="second").value);
+
+const restante=(23-hora)*3600+(59-min)*60+(59-seg);
+document.getElementById("horas").textContent=String(Math.floor(restante/3600)).padStart(2,"0");
+document.getElementById("minutos").textContent=String(Math.floor(restante%3600/60)).padStart(2,"0");
+document.getElementById("segundos").textContent=String(restante%60).padStart(2,"0");
+}
+atualizarContador();
+setInterval(atualizarContador,1000);
+
+document.querySelectorAll(".completo").forEach(el=>{
+el.addEventListener("click",function(e){
+if(CHECKOUT_COMPLETO){
+e.preventDefault();
+window.location.href=CHECKOUT_COMPLETO;
+}
+});
+});
+
+document.querySelectorAll(".basico").forEach(el=>{
+el.addEventListener("click",function(e){
+if(CHECKOUT_BASICO){
+e.preventDefault();
+window.location.href=CHECKOUT_BASICO;
+}
+});
+});
+</script>
+</body>
+</html>
